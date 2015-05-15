@@ -8,6 +8,7 @@
       <th>Pdi completed by</th>
       <th>Notes</th>
       <th>Ready to show</th>
+      <th>Vehicle</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,8 @@
         <td><%= nv_checklist.pdi_completed_by %></td>
         <td><%= nv_checklist.notes %></td>
         <td><%= nv_checklist.ready_to_show %></td>
+        <td><%#= link_to Vehicle.find(nv_checklist.vehicle_id).stocknum, Vehicle.find(nv_checklist.vehicle_id) %></td>
+        <td><%= link_to( Vehicle.find(nv_checklist.vehicle_id).stocknum, Vehicle.find(nv_checklist.vehicle_id) ) if nv_checklist.vehicle_id %></td>
         <td><%= link_to 'Show', nv_checklist %></td>
         <td><%= link_to 'Edit', edit_nv_checklist_path(nv_checklist) %></td>
         <td><%= link_to 'Destroy', nv_checklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
