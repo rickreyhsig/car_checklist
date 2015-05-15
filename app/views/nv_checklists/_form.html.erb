@@ -1,0 +1,41 @@
+<%= form_for(@nv_checklist) do |f| %>
+  <% if @nv_checklist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nv_checklist.errors.count, "error") %> prohibited this nv_checklist from being saved:</h2>
+
+      <ul>
+      <% @nv_checklist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vehicle_id, 'Vehicle checklist for:' %><br>
+    <%= f.collection_select(:vehicle_id, Vehicle.where(vehicle_type: 'new').where("id NOT in (?)", NvChecklist.where('vehicle_id IS NOT NULL').uniq.pluck(:vehicle_id) ), :id, :stocknum) %><br>
+  </div>
+  <div class="field">
+    <%= f.label :stock_in %><br>
+    <%= f.check_box :stock_in %>
+  </div>
+  <div class="field">
+    <%= f.label :pdi %><br>
+    <%= f.check_box :pdi %>
+  </div>
+  <div class="field">
+    <%= f.label :pdi_completed_by %><br>
+    <%= f.text_field :pdi_completed_by %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :ready_to_show %><br>
+    <%= f.check_box :ready_to_show %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

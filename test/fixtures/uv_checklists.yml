@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  msi_cpo: false
+  msi_cpo_completed_by: MyString
+  notes: MyText
+  paint_wheels: false
+  details: MyText
+
+two:
+  msi_cpo: false
+  msi_cpo_completed_by: MyString
+  notes: MyText
+  paint_wheels: false
+  details: MyText

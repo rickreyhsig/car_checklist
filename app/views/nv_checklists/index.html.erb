@@ -1,0 +1,33 @@
+<h1>Listing nv_checklists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stock in</th>
+      <th>Pdi</th>
+      <th>Pdi completed by</th>
+      <th>Notes</th>
+      <th>Ready to show</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nv_checklists.each do |nv_checklist| %>
+      <tr>
+        <td><%= nv_checklist.stock_in %></td>
+        <td><%= nv_checklist.pdi %></td>
+        <td><%= nv_checklist.pdi_completed_by %></td>
+        <td><%= nv_checklist.notes %></td>
+        <td><%= nv_checklist.ready_to_show %></td>
+        <td><%= link_to 'Show', nv_checklist %></td>
+        <td><%= link_to 'Edit', edit_nv_checklist_path(nv_checklist) %></td>
+        <td><%= link_to 'Destroy', nv_checklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nv checklist', new_nv_checklist_path %>

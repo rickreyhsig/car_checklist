@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_in: false
+  pdi: false
+  pdi_completed_by: MyString
+  notes: MyText
+  ready_to_show: false
+
+two:
+  stock_in: false
+  pdi: false
+  pdi_completed_by: MyString
+  notes: MyText
+  ready_to_show: false

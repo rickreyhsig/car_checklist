@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Msi cpo:</strong>
+  <%= @uv_checklist.msi_cpo %>
+</p>
+
+<p>
+  <strong>Msi cpo completed by:</strong>
+  <%= @uv_checklist.msi_cpo_completed_by %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @uv_checklist.notes %>
+</p>
+
+<p>
+  <strong>Paint wheels:</strong>
+  <%= @uv_checklist.paint_wheels %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @uv_checklist.details %>
+</p>
+
+<%= link_to 'Edit', edit_uv_checklist_path(@uv_checklist) %> |
+<%= link_to 'Back', uv_checklists_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<strong>Checklist for vehicle Vehicle.find()</strong>
+<p>
+  <strong>Stock in:</strong>
+  <%= @nv_checklist.stock_in %>
+</p>
+
+<p>
+  <strong>Pdi:</strong>
+  <%= @nv_checklist.pdi %>
+</p>
+
+<p>
+  <strong>Pdi completed by:</strong>
+  <%= @nv_checklist.pdi_completed_by %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @nv_checklist.notes %>
+</p>
+
+<p>
+  <strong>Ready to show:</strong>
+  <%= @nv_checklist.ready_to_show %>
+</p>
+
+<%= link_to 'Edit', edit_nv_checklist_path(@nv_checklist) %> |
+<%= link_to 'Back', nv_checklists_path %>

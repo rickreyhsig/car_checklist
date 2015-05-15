@@ -1,0 +1,47 @@
+<h1>Listing vehicles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ext color</th>
+      <th>Int color</th>
+      <th>Lat</th>
+      <th>Long</th>
+      <th>Make</th>
+      <th>Mileage</th>
+      <th>Model</th>
+      <th>Vehicle type</th>
+      <th>Price</th>
+      <th>Stocknum</th>
+      <th>Vin</th>
+      <th>Year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.ext_color %></td>
+        <td><%= vehicle.int_color %></td>
+        <td><%= vehicle.lat %></td>
+        <td><%= vehicle.long %></td>
+        <td><%= vehicle.make %></td>
+        <td><%= vehicle.mileage %></td>
+        <td><%= vehicle.model %></td>
+        <td><%= vehicle.vehicle_type %></td>
+        <td><%= vehicle.price %></td>
+        <td><%= vehicle.stocknum %></td>
+        <td><%= vehicle.vin %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vehicle', new_vehicle_path %>
