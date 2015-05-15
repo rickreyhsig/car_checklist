@@ -69,6 +69,6 @@ class UvChecklistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def uv_checklist_params
-      params.require(:uv_checklist).permit(:msi_cpo, :msi_cpo_completed_by, :notes, :paint_wheels, :details)
+      params.require(:uv_checklist).permit(:msi_cpo, :msi_cpo_completed_by, :notes, :paint_wheels, :details, :vehicle_id)
     end
 end

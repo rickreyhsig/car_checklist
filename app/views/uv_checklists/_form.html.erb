@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :vehicle_id, 'Vehicle checklist for:' %><br>
+    <%= f.collection_select(:vehicle_id, Vehicle.where(vehicle_type: 'used').where("id NOT in (?)", UvChecklist.where('vehicle_id IS NOT NULL').uniq.pluck(:vehicle_id) ), :id, :stocknum) %><br>
+  </div>
+
+  <div class="field">
     <%= f.label :msi_cpo %><br>
     <%= f.check_box :msi_cpo %>
   </div>
