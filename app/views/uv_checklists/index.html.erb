@@ -8,6 +8,7 @@
       <th>Notes</th>
       <th>Paint wheels</th>
       <th>Details</th>
+      <th>Vehicle</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= uv_checklist.notes %></td>
         <td><%= uv_checklist.paint_wheels %></td>
         <td><%= uv_checklist.details %></td>
+        <td><%= link_to Vehicle.find(uv_checklist.vehicle_id).stocknum, Vehicle.find(uv_checklist.vehicle_id) %></td>
         <td><%= link_to 'Show', uv_checklist %></td>
         <td><%= link_to 'Edit', edit_uv_checklist_path(uv_checklist) %></td>
         <td><%= link_to 'Destroy', uv_checklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
