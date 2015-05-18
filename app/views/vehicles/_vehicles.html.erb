@@ -1,0 +1,47 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<table id="vehicle_table" class="table table-striped table-bordered table-hover table-condensed table-responsive">
+  <thead>
+    <tr>
+      <th><%= sortable 'ext_color' , 'Ext color' %></th>
+      <th><%= sortable 'int_color', 'Int color' %></th>
+      <th><%= sortable 'lat', 'Lat' %> </th>
+      <th><%= sortable 'long', 'Long' %> </th>
+      <th><%= sortable 'make', 'Make' %> </th>
+      <th><%= sortable 'mileage', 'Mileage' %> </th>
+      <th><%= sortable 'model', 'Model' %> </th>
+      <th><%= sortable 'vehicle_type', 'Vehicle type' %> </th>
+      <th><%= sortable 'price', 'Price' %> </th>
+      <th><%= sortable 'stocknum', 'Stocknum' %> </th>
+      <th><%= sortable 'vin', 'Vin' %> </th>
+      <th><%= sortable 'year', 'Year'  %> </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.ext_color %></td>
+        <td><%= vehicle.int_color %></td>
+        <td><%= vehicle.lat %></td>
+        <td><%= vehicle.long %></td>
+        <td><%= vehicle.make %></td>
+        <td><%= vehicle.mileage %></td>
+        <td><%= vehicle.model %></td>
+        <td><%= vehicle.vehicle_type %></td>
+        <td><%= vehicle.price %></td>
+        <td><%= vehicle.stocknum %></td>
+        <td><%= vehicle.vin %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class='digg_pagination'>
+    <%= will_paginate @vehicles %>
+</div>

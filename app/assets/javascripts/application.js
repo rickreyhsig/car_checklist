@@ -15,3 +15,14 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $("#vehicles th a, #vehicles .pagination a").click(function() {
+    $.getScript(this.href);
+    return false;
+  });
+  $("#vehicles_search input").keyup(function() {
+    $.get($("#vehicles_search").attr("action"), $("#vehicles_search").serialize(), null, "script");
+    return false;
+  });
+});

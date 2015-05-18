@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 gem "therubyracer"
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'will_paginate', '~> 3.0.6'
+gem 'jquery-rails'
 
 
 # Use ActiveModel has_secure_password
