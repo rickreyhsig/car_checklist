@@ -43,8 +43,9 @@
   </tbody>
 </table>
 
-<%= will_paginate @vehicles %>
-
+  <div class='digg_pagination'>
+    <%= will_paginate @vehicles %>
+  </div>
 <br>
 
 <%= link_to 'New Vehicle', new_vehicle_path %>
