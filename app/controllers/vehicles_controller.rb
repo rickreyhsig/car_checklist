@@ -1,10 +1,12 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
 
   # GET /vehicles
   # GET /vehicles.json
   def index
-    @vehicles = Vehicle.all
+    #@vehicles = Vehicle.all
+    @vehicles = Vehicle.order(sort_column + " " + sort_direction)
   end
 
   # GET /vehicles/1
@@ -70,5 +72,13 @@ class VehiclesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def vehicle_params
       params.require(:vehicle).permit(:ext_color, :int_color, :lat, :long, :make, :mileage, :model, :vehicle_type, :price, :stocknum, :vin, :year)
+    end
+    
+    def sort_column
+      Vehicle.column_names.include?(params[:sort]) ? params[:sort] : "ext_color"
+    end
+  
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
