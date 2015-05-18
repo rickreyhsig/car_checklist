@@ -1,7 +1,7 @@
-<% content_for :title, "New Vehicle Checklists" %>
+<% content_for :title, "New Checklists" %>
 <h1>New Vehicle Checklists</h1>
 
-<table>
+<table id="new_checklist_table" class="table table-striped table-bordered table-hover table-condensed table-responsive">
   <thead>
     <tr>
       <th>Stock in</th>
@@ -22,8 +22,7 @@
         <td><%= nv_checklist.pdi_completed_by %></td>
         <td><%= nv_checklist.notes %></td>
         <td><%= nv_checklist.ready_to_show %></td>
-        <td><%#= link_to Vehicle.find(nv_checklist.vehicle_id).stocknum, Vehicle.find(nv_checklist.vehicle_id) %></td>
-        <td><%= link_to( Vehicle.find(nv_checklist.vehicle_id).stocknum, Vehicle.find(nv_checklist.vehicle_id) ) if nv_checklist.vehicle_id %></td>
+        <td><%= link_to(Vehicle.find(nv_checklist.vehicle_id).stocknum, Vehicle.find(nv_checklist.vehicle_id) ) if nv_checklist.vehicle_id %></td>
         <td><%= link_to 'Show', nv_checklist %></td>
         <td><%= link_to 'Edit', edit_nv_checklist_path(nv_checklist) %></td>
         <td><%= link_to 'Destroy', nv_checklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
